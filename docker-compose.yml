@@ -1,15 +1,15 @@
 version: "3.4"
 services:
-  geth.dnp.dappnode.eth:
-    image: "geth.dnp.dappnode.eth:0.1.17"
+  juiceman.dnp.dappnode.eth:
+    image: "juiceman.dnp.dappnode.eth:0.1.0"
     build:
       context: ./build
       args:
-        UPSTREAM_VERSION: v1.10.13
+        UPSTREAM_VERSION: v1.10.13-mev0.4.1
     volumes:
       - "geth:/root/.ethereum"
     environment:
-      - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool"
+      - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool --ws.api eth,net,web3,txpool --ws.origins "*""
       - SYNCMODE
     ports:
       - "30303"
