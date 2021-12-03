@@ -10,7 +10,7 @@ services:
       - "geth:/root/.ethereum"
     environment:
       - "EXTRA_OPTIONS=--http.api eth,net,web3,txpool --ws.api eth,net,web3,txpool"
-      - SYNCMODE=fast
+      - SYNCMODE
     ports:
       - "30303"
       - 30303/udp
